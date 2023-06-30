@@ -41,16 +41,6 @@ extension CastomALertView {
     
     func setupAlert(title: String, message: String, view: UIView) {
         self.roundedCorners(corners: [UIRectCorner.topRight, UIRectCorner.bottomLeft], radius: 100)
-        let corners = UIRectCorner(arrayLiteral: [
-            UIRectCorner.topRight,
-            UIRectCorner.bottomLeft
-        ])
-        let cornerSize = CGSize(width: 100, height: 100)
-        let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: cornerSize)
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = maskPath.cgPath
-        self.layer.mask = maskLayer
-        
         
         addSubviews(view: view)
         setupTitleLabel(title: title)

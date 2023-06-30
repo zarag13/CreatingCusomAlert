@@ -10,9 +10,10 @@
 		ED1CD6BA2A4F05D5003DE5DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1CD6B92A4F05D5003DE5DA /* AppDelegate.swift */; };
 		ED1CD6BC2A4F05D5003DE5DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1CD6BB2A4F05D5003DE5DA /* SceneDelegate.swift */; };
 		ED1CD6BE2A4F05D5003DE5DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1CD6BD2A4F05D5003DE5DA /* ViewController.swift */; };
-		ED1CD6C12A4F05D5003DE5DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1CD6BF2A4F05D5003DE5DA /* Main.storyboard */; };
 		ED1CD6C32A4F05D8003DE5DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1CD6C22A4F05D8003DE5DA /* Assets.xcassets */; };
 		ED1CD6C62A4F05D8003DE5DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1CD6C42A4F05D8003DE5DA /* LaunchScreen.storyboard */; };
+		ED1CD70E2A4F322B003DE5DA /* CastomALertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1CD70D2A4F322B003DE5DA /* CastomALertView.swift */; };
+		ED1CD7102A4F3321003DE5DA /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1CD70F2A4F3321003DE5DA /* ExtensionUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,11 @@
 		ED1CD6B92A4F05D5003DE5DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED1CD6BB2A4F05D5003DE5DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED1CD6BD2A4F05D5003DE5DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ED1CD6C02A4F05D5003DE5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED1CD6C22A4F05D8003DE5DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1CD6C52A4F05D8003DE5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED1CD6C72A4F05D8003DE5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED1CD70D2A4F322B003DE5DA /* CastomALertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastomALertView.swift; sourceTree = "<group>"; };
+		ED1CD70F2A4F3321003DE5DA /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +58,11 @@
 		ED1CD6B82A4F05D5003DE5DA /* CreatingCusomAlert */ = {
 			isa = PBXGroup;
 			children = (
+				ED1CD6BD2A4F05D5003DE5DA /* ViewController.swift */,
+				ED1CD70D2A4F322B003DE5DA /* CastomALertView.swift */,
+				ED1CD70F2A4F3321003DE5DA /* ExtensionUIView.swift */,
 				ED1CD6B92A4F05D5003DE5DA /* AppDelegate.swift */,
 				ED1CD6BB2A4F05D5003DE5DA /* SceneDelegate.swift */,
-				ED1CD6BD2A4F05D5003DE5DA /* ViewController.swift */,
-				ED1CD6BF2A4F05D5003DE5DA /* Main.storyboard */,
 				ED1CD6C22A4F05D8003DE5DA /* Assets.xcassets */,
 				ED1CD6C42A4F05D8003DE5DA /* LaunchScreen.storyboard */,
 				ED1CD6C72A4F05D8003DE5DA /* Info.plist */,
@@ -127,7 +130,6 @@
 			files = (
 				ED1CD6C62A4F05D8003DE5DA /* LaunchScreen.storyboard in Resources */,
 				ED1CD6C32A4F05D8003DE5DA /* Assets.xcassets in Resources */,
-				ED1CD6C12A4F05D5003DE5DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +142,15 @@
 			files = (
 				ED1CD6BE2A4F05D5003DE5DA /* ViewController.swift in Sources */,
 				ED1CD6BA2A4F05D5003DE5DA /* AppDelegate.swift in Sources */,
+				ED1CD70E2A4F322B003DE5DA /* CastomALertView.swift in Sources */,
 				ED1CD6BC2A4F05D5003DE5DA /* SceneDelegate.swift in Sources */,
+				ED1CD7102A4F3321003DE5DA /* ExtensionUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ED1CD6BF2A4F05D5003DE5DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED1CD6C02A4F05D5003DE5DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED1CD6C42A4F05D8003DE5DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +288,6 @@
 				INFOPLIST_FILE = CreatingCusomAlert/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +315,6 @@
 				INFOPLIST_FILE = CreatingCusomAlert/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

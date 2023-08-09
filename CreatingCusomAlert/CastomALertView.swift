@@ -31,7 +31,11 @@ final class CastomALertView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.roundedCorners(corners: [UIRectCorner.topRight, UIRectCorner.bottomLeft], radius: 100)
+    }
 }
 
 
@@ -39,15 +43,15 @@ final class CastomALertView: UIView {
 //MARK: - settings CastomALert
 extension CastomALertView {
     
-    func setupAlert(title: String, message: String, view: UIView) {
-        self.roundedCorners(corners: [UIRectCorner.topRight, UIRectCorner.bottomLeft], radius: 100)
-        
+    func setupAlert(title: String, message: String, view: UIView, height: CGFloat, width: CGFloat) {
+        //self.roundedCorners(corners: [UIRectCorner.topRight, UIRectCorner.bottomLeft], radius: 100)
         addSubviews(view: view)
         setupTitleLabel(title: title)
         setupMessageLabel(message: message)
         setupBlureView(view: view)
         setupButton()
         addAction()
+        setupConstrate(view: view, height: height, width: width)
     }
 }
 
@@ -63,16 +67,18 @@ private extension CastomALertView {
         view.addSubview(self)
     }
     
+    //MARK: - settings TitleLabel
     func setupTitleLabel(title: String) {
-        titleLabel.frame = CGRect(x: 15, y: 30, width: self.frame.width - 30, height: 80)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         titleLabel.textColor = .purple
         titleLabel.textAlignment = .left
     }
     
+    //MARK: - settings MessageLabel
     func setupMessageLabel(message: String) {
-        messageLabel.frame = CGRect(x: 15, y: 32, width: self.frame.width - 30, height: 180)
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.text = message
         messageLabel.textAlignment = .left
         messageLabel.numberOfLines = 0
@@ -81,6 +87,7 @@ private extension CastomALertView {
         addSubview(messageLabel)
     }
     
+    //MARK: - settings BlureView
     func setupBlureView(view: UIView) {
         let blureEffect = UIBlurEffect(style: .systemUltraThinMaterial)
         visualEffectView.effect = blureEffect
@@ -88,9 +95,12 @@ private extension CastomALertView {
         visualEffectView.frame = view.bounds
     }
     
+    //MARK: - settings Button
     func setupButton() {
-        buttonAlert.frame = CGRect(x: self.frame.width - 80, y: self.frame.height - 90, width: self.frame.width - 280, height: 40)
-        let heart = UIImage(systemName: "heart")!
+        buttonAlert.translatesAutoresizingMaskIntoConstraints = false
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 30)
+        guard let heart = UIImage(systemName: "heart", withConfiguration: config) else { return }
         buttonAlert.setImage(heart, for: .normal)
     }
     
@@ -98,6 +108,30 @@ private extension CastomALertView {
         buttonAlert.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
     }
     
+    func setupConstrate(view: UIView, height: CGFloat, width: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            self.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            self.heightAnchor.constraint(equalToConstant: height),
+            self.widthAnchor.constraint(equalToConstant: width),
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            
+            buttonAlert.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            buttonAlert.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            buttonAlert.heightAnchor.constraint(equalToConstant: 30),
+            buttonAlert.widthAnchor.constraint(equalToConstant: 30),
+            
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+        ])
+    }
 }
 
 

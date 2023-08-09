@@ -14,6 +14,7 @@
 		ED1CD6C62A4F05D8003DE5DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1CD6C42A4F05D8003DE5DA /* LaunchScreen.storyboard */; };
 		ED1CD70E2A4F322B003DE5DA /* CastomALertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1CD70D2A4F322B003DE5DA /* CastomALertView.swift */; };
 		ED1CD7102A4F3321003DE5DA /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1CD70F2A4F3321003DE5DA /* ExtensionUIView.swift */; };
+		ED5249B62A83B0A6001D7C23 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5249B52A83B0A6001D7C23 /* Preview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ED1CD6C72A4F05D8003DE5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED1CD70D2A4F322B003DE5DA /* CastomALertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastomALertView.swift; sourceTree = "<group>"; };
 		ED1CD70F2A4F3321003DE5DA /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
+		ED5249B52A83B0A6001D7C23 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				ED1CD6BD2A4F05D5003DE5DA /* ViewController.swift */,
 				ED1CD70D2A4F322B003DE5DA /* CastomALertView.swift */,
+				ED5249B52A83B0A6001D7C23 /* Preview.swift */,
 				ED1CD70F2A4F3321003DE5DA /* ExtensionUIView.swift */,
 				ED1CD6B92A4F05D5003DE5DA /* AppDelegate.swift */,
 				ED1CD6BB2A4F05D5003DE5DA /* SceneDelegate.swift */,
@@ -144,6 +147,7 @@
 				ED1CD6BA2A4F05D5003DE5DA /* AppDelegate.swift in Sources */,
 				ED1CD70E2A4F322B003DE5DA /* CastomALertView.swift in Sources */,
 				ED1CD6BC2A4F05D5003DE5DA /* SceneDelegate.swift in Sources */,
+				ED5249B62A83B0A6001D7C23 /* Preview.swift in Sources */,
 				ED1CD7102A4F3321003DE5DA /* ExtensionUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

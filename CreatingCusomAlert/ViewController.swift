@@ -17,7 +17,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUIView()
-        
+        setupConstraint()
     }
 }
 
@@ -42,20 +42,26 @@ private extension ViewController {
     
     func setupCustomAlert() {
         customAlert.delegate = self
-        customAlert.frame = CGRect(x: 0, y: 0, width: 350, height: 250)
-        customAlert.center = self.view.center
         customAlert.backgroundColor = .white
     }
     
     func setupButton() {
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-        button.center = self.view.center
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Show Alert", for: .normal)
         button.backgroundColor = .lightGray
     }
     
     func addAction() {
         button.addTarget(self, action: #selector(showfAlert), for: .touchUpInside)
+    }
+    
+    func setupConstraint() {
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            button.heightAnchor.constraint(equalToConstant: 60),
+            button.widthAnchor.constraint(equalToConstant: 120),
+        ])
     }
 }
 
@@ -65,7 +71,7 @@ private extension ViewController {
     @objc func showfAlert(_ sender: UIButton) {
         customAlert.setupAlert(title: "Hold on!",
                                message: "Would you like to ty our short tutorial to show you how this app work? It will take no more than 30 seconds!",
-                               view: self.view)
+                               view: self.view, height: 250, width: 350)
         animateIn()
     }
 }
@@ -77,11 +83,13 @@ private extension ViewController {
     func animateIn() {
         customAlert.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         customAlert.alpha = 0
-
+        self.customAlert.layoutIfNeeded()
         UIView.animate(withDuration: 0.4) {
             self.customAlert.visualEffectView.alpha = 1
             self.customAlert.alpha = 1
             self.customAlert.transform = CGAffineTransform.identity
+            
+            self.customAlert.layoutIfNeeded()
         }
     }
 }
@@ -97,5 +105,13 @@ extension ViewController: AlertDelegate {
             self.customAlert.removeFromSuperview()
             self.customAlert.transform = CGAffineTransform.identity
         }
+    }
+}
+
+//MARK: - SwiftUI Preview
+import SwiftUI
+struct ViewControllerProvider: PreviewProvider {
+    static var previews: some View {
+        ViewController().showPreview()
     }
 }
